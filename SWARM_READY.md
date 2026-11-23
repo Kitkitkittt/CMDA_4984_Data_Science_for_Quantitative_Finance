@@ -21,9 +21,9 @@ If a `swarm-ready` skill is installed, load it. Otherwise execute the documented
 
 ## Repository starting point
 
-Read: [README.md](README.md).
+Start with the [course materials](README.md#course-materials), which link to the tracked course PDF.
 
-Continue an existing approved issue or a clearly scoped user objective after inspecting the source map below. If none is selected, return the smallest useful improvement and its verifier as the handoff; do not begin a portfolio-wide rewrite.
+Continue an existing approved issue or a clearly scoped user objective after checking the relevant paths in the checkout. If none is selected, return the smallest useful improvement and its verifier as the handoff; do not begin a portfolio-wide rewrite.
 
 Start with one writer. Add workers only for disjoint changes or independent experiments whose results can be checked separately. Keep shared interfaces and final integration with one owner.
 
@@ -41,7 +41,14 @@ The base above is an inspection snapshot, not a permanent working branch. Refres
 
 ## Verification starting point
 
-No executable acceptance command was established by this bounded source inspection. Read `README.md` and record the narrowest existing check before implementation. Do not invent a `test` command or infer that the repository has no tests from this gap. For a documentation-only task, check links, factual source anchors and whitespace; do not build unrelated application code.
+For changes to the course entry in the README, confirm its PDF destination is tracked. From the repository root:
+
+```sh
+git --no-lazy-fetch ls-files --error-unmatch -- README.md SWARM_READY.md \
+  'ECON 4984_CMDA 4984_Data_Science_for_Quantitative_Finance.pdf'
+```
+
+Expect three paths and exit 0. Compare the README's URL-decoded destination with the PDF filename above. This check does not open course content, execute notebooks, or request market data.
 
 ## Required handoff result
 
